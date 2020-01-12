@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping(value = "/getUserInfo")
-    public User getUserInfo(){
-        return new User("test", 0);
+    public String getUserInfo(){
+        return "Login User Info";
     }
 
     @GetMapping(value = "/noAuth/getUserInfo")
-    public User noAuthGetUserInfo(){
-        return new User("anonymous user", 0);
+    public String noAuthGetUserInfo(){
+        return "Anonymous User Info";
     }
 }
