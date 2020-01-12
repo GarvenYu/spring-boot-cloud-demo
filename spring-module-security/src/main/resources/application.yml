@@ -1,0 +1,13 @@
+
+server:
+  port: 8300
+  tomcat:
+    accesslog:
+      enabled: true
+      file-date-format: .yyyy-MM-dd
+      pattern: "%t [%I] %{X-Forwarded-For}i %l %u %r %s %b %D ms"
+    basedir: logs/tomcat/
+
+#
+#logging:
+#  config: classpath:logback-spring.xml
