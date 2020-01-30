@@ -19,6 +19,7 @@
 
     <modules>
         <module>../spring-module-security</module>
+        <module>../spring-boot-bean-lifecycle</module>
     </modules>
 
     <properties>
