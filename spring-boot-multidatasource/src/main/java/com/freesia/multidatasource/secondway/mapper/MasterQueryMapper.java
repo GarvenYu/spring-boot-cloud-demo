@@ -1,6 +1,6 @@
 package com.freesia.multidatasource.secondway.mapper;
 
-import com.freesia.multidatasource.firstway.entity.User;
+import com.freesia.multidatasource.secondway.entity.User;
 import com.freesia.multidatasource.secondway.aop.CustomDataSource;
 import com.freesia.multidatasource.secondway.config.DataSourceConstants;
 import org.apache.ibatis.annotations.Select;
@@ -12,9 +12,9 @@ import java.util.List;
  * @author yukaibo
  */
 @Repository
-@CustomDataSource(value = DataSourceConstants.DS_KEY_MASTER)
 public interface MasterQueryMapper {
 
     @Select("select * from user")
+    @CustomDataSource(value = DataSourceConstants.DS_KEY_MASTER)
     List<User> selectUserFromMaster();
 }

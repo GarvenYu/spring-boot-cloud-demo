@@ -1,7 +1,7 @@
 package com.freesia.multidatasource.secondway.controller;
 
-import com.freesia.multidatasource.firstway.mapper.master.MasterQueryMapper;
-import com.freesia.multidatasource.firstway.mapper.slave.SlaveQueryMapper;
+import com.freesia.multidatasource.secondway.mapper.MasterQueryMapper;
+import com.freesia.multidatasource.secondway.mapper.SlaveQueryMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

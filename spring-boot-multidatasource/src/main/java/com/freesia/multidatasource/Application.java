@@ -3,12 +3,15 @@ package com.freesia.multidatasource;
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 /**
  * @author freesia <yukaibo@bytedance.com>
  * @date 2020-01-11 18:07
  **/
-@SpringBootApplication(exclude = {MybatisAutoConfiguration.class})
+//使用方式1时，不能允许MybatisAutoConfiguration自动装配
+//@SpringBootApplication(exclude = {MybatisAutoConfiguration.class})
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Application {
 
     public static void main(String[] args){
