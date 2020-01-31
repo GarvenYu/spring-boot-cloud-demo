@@ -19,7 +19,8 @@ import java.util.Objects;
 @Slf4j
 public class DynamicDataSourceAspect {
 
-    @Pointcut("@annotation(com.freesia.multidatasource.secondway.aop.CustomDataSource)")
+    @Pointcut("@annotation(com.freesia.multidatasource.secondway.aop.SwitchDataSource) || " +
+            "@within(com.freesia.multidatasource.secondway.aop.SwitchDataSource)")
     public void dataSourcePointCut(){
         log.info("切点hit");
     }
@@ -39,14 +40,14 @@ public class DynamicDataSourceAspect {
     /**
      * 根据类或方法获取数据源注解
      */
-    private CustomDataSource getDataSourceAnnotation(ProceedingJoinPoint joinPoint){
+    private SwitchDataSource getDataSourceAnnotation(ProceedingJoinPoint joinPoint){
         Class<?> targetClass = joinPoint.getTarget().getClass();
-        CustomDataSource annotation = targetClass.getAnnotation(CustomDataSource.class);
+        SwitchDataSource annotation = targetClass.getAnnotation(SwitchDataSource.class);
         if(Objects.nonNull(annotation)){
             return annotation;
         }
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        return methodSignature.getMethod().getAnnotation(CustomDataSource.class);
+        return methodSignature.getMethod().getAnnotation(SwitchDataSource.class);
     }
 
 }

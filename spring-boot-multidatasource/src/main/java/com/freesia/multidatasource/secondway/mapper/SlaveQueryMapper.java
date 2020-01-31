@@ -1,6 +1,6 @@
 package com.freesia.multidatasource.secondway.mapper;
 
-import com.freesia.multidatasource.secondway.aop.CustomDataSource;
+import com.freesia.multidatasource.secondway.aop.SwitchDataSource;
 import com.freesia.multidatasource.secondway.config.DataSourceConstants;
 import com.freesia.multidatasource.secondway.entity.User;
 import org.apache.ibatis.annotations.Select;
@@ -15,6 +15,6 @@ import java.util.List;
 public interface SlaveQueryMapper {
 
     @Select("select * from user")
-    @CustomDataSource(value = DataSourceConstants.DS_KEY_SLAVE)
+    @SwitchDataSource(value = DataSourceConstants.DS_KEY_SLAVE)
     List<User> selectUserFromSlave();
 }

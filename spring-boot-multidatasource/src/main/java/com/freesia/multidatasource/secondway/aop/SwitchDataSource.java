@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CustomDataSource {
+public @interface SwitchDataSource {
 
     /**
      * 数据源名称
