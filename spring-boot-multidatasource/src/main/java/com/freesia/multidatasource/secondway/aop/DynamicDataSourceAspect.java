@@ -20,7 +20,7 @@ import java.util.Objects;
 public class DynamicDataSourceAspect {
 
     @Pointcut("@annotation(com.freesia.multidatasource.secondway.aop.SwitchDataSource) || " +
-            "@within(com.freesia.multidatasource.secondway.aop.SwitchDataSource)")
+            "execution(public * com.freesia.multidatasource.secondway.mapper..*.*(..))")
     public void dataSourcePointCut(){
         log.info("切点hit");
     }
