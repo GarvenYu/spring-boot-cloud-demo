@@ -27,6 +27,7 @@ public class MasterSessionFactoryConfig {
         //对应数据库的entity位置
 //        String typeAliasesPackage = "me.mason.demo.basicmultidatasource.entity.master";
 //        mybatisSqlSessionFactoryBean.setTypeAliasesPackage(typeAliasesPackage);
+        mybatisSqlSessionFactoryBean.getObject().getConfiguration().setMapUnderscoreToCamelCase(true);
         return mybatisSqlSessionFactoryBean.getObject();
     }
 }
